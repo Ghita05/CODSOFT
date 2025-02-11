@@ -1,6 +1,6 @@
 from preprocessing import load_and_preprocess_data, split_data
 from feature import create_pipeline
-from modeling import train_model, evaluate_model, save_model
+from modeling import train_model, evaluate_model, save_model, load_model, predict
 
 def main():
     file_path = 'IMDb_Movies_India.csv'
@@ -18,5 +18,11 @@ def main():
     save_model(model)
     print('Model saved successfully.')
     
+    # Load the model and make predictions on new data
+    loaded_model = load_model()
+    X_new = X_test_transformed  # Replace with your new data
+    predictions = predict(loaded_model, X_new)
+    print(f'Predictions: {predictions}')
+
 if __name__ == '__main__':
     main()

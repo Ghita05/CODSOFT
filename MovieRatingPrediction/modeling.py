@@ -9,7 +9,15 @@ def train_model(X_train, y_train):
 
 def evaluate_model(model, X_test, y_test):
     predictions = model.predict(X_test)
-    return mean_squared_error(y_test, predictions, squared=False)
+    mse = mean_squared_error(y_test, predictions)
+    rmse = mse ** 0.5  # Calculate RMSE manually
+    return rmse
 
 def save_model(model, filename='model.pkl'):
     joblib.dump(model, filename)
+
+def load_model(filename='model.pkl'):
+    return joblib.load(filename)
+
+def predict(model, X_new):
+    return model.predict(X_new)
