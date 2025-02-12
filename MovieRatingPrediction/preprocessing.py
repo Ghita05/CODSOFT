@@ -1,8 +1,5 @@
 import pandas as pd
 import numpy as np
-from sklearn.preprocessing import StandardScaler, OneHotEncoder
-from sklearn.compose import ColumnTransformer
-from sklearn.pipeline import Pipeline
 from sklearn.model_selection import train_test_split
 
 def load_and_preprocess_data(file_path):
@@ -25,7 +22,6 @@ def load_and_preprocess_data(file_path):
 
     return df
 
-# ✅ Add missing `split_data` function
 def split_data(df):
     X = df.drop(columns=['Rating'])  # Features
     y = df['Rating']  # Target

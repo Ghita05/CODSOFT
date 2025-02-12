@@ -11,7 +11,6 @@ def load_model(filename='model.pkl'):
 def predict(model, X_new):
     return model.predict(X_new)
 
-
 def train_model(X_train, y_train):
     model = RandomForestRegressor(n_estimators=100, max_depth=10, random_state=42)
     model.fit(X_train, y_train)
