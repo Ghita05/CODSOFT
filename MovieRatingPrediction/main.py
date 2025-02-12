@@ -2,6 +2,7 @@ from preprocessing import load_and_preprocess_data, split_data
 from feature import create_pipeline
 from modeling import train_model, evaluate_model, save_model, load_model, predict
 
+
 def main():
     file_path = 'IMDb_Movies_India.csv'
     df = load_and_preprocess_data(file_path)
